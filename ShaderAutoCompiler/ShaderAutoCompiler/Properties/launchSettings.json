@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ShaderAutoCompiler": {
+      "commandName": "Project",
+      "commandLineArgs": "--compilerPath \"C:\\Users\\harus\\program\\rensyu\\directx12cliond3dx12\\thirdparty\\dxc_2021_07_01\\bin\\x64\\dxc.exe\" --path \"C:\\Users\\harus\\program\\rensyu\\directx12cliond3dx12\\Shader\""
+    }
+  }
+}
