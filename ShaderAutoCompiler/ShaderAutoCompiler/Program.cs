@@ -56,11 +56,12 @@ namespace ShaderAutoCompiler
 
         void AllForceCompile(string path)
         {
-            Console.WriteLine("AllForceCompile");
+            Console.WriteLine("Start AllForceCompile");
             foreach(var file in Directory.EnumerateFiles(path, "*.hlsl", SearchOption.AllDirectories))
             {
                 CompileAsync(CompilerPath, file).Wait();
             }
+            Console.WriteLine("End AllForceCompile");
         }
 
         async Task CompileAsync(string compilerPath, string path)
@@ -87,13 +88,13 @@ namespace ShaderAutoCompiler
                 "-Zi",
                 path
             };
-            Console.WriteLine($"compileStart: {fileName}");
+            Console.WriteLine($"Start compile: {fileName}");
             var psTask = Process.Start(compilerPath, string.Join(" ", psArgs.Concat(args))).WaitForExitAsync();
             var vsTask = Process.Start(compilerPath, string.Join(" ", vsArgs.Concat(args))).WaitForExitAsync();
 
             await psTask;
             await vsTask;
-            Console.WriteLine($"compiled: {fileName}");
+            Console.WriteLine($"End compile: {fileName}");
         } 
     }
 }
