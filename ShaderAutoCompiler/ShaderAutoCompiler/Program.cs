@@ -85,6 +85,7 @@ namespace ShaderAutoCompiler
             {
                 "-Zi",
                 "-force-rootsig-ver rootsig_1_0",
+                "-Qembed_debug",
                 path
             };
             Console.WriteLine($"Start compile: {fileName}");
