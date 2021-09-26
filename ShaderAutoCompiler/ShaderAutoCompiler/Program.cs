@@ -74,18 +74,17 @@ namespace ShaderAutoCompiler
                 "-T ps_6_0",
                 "-E BasicPS",
                 $"-Fo {directoryName}/{fileNameWithoutEx}-ps.bin",
-                $"-Fd {directoryName}/{fileNameWithoutEx}-ps.pdb",
             };
             string[] vsArgs = new[]
             {
                 "-T vs_6_0",
                 "-E BasicVS",
                 $"-Fo {directoryName}/{fileNameWithoutEx}-vs.bin",
-                $"-Fd {directoryName}/{fileNameWithoutEx}-vs.pdb",
             };
             string[] args = new[]
             {
                 "-Zi",
+                "-force-rootsig-ver rootsig_1_0",
                 path
             };
             Console.WriteLine($"Start compile: {fileName}");
